@@ -18,7 +18,6 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'dos2unix build.sh'
                 sh 'chmod +x run_maven_project.sh'
                 sh './run_maven_project.sh'
                 archiveArtifacts artifacts: 'build/myfirmware.*', fingerprint: true
